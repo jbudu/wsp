@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>{{ title }} - SteamCalc</title>
+    <link href="/static/content/bootstrap.min.css" rel="stylesheet" type="text/css"/>
+    <link href="/static/content/modern-business.css" rel="stylesheet">
+    <link href="/static/font-awesome-4.1.0/css/font-awesome.min.css" rel="stylesheet" type="text/css">
+
+    <script src="/static/scripts/modernizr-2.6.2.js"></script>
+</head>
+
+<body>
+    <nav class="navbar navbar-inverse"  role="navigation">
+        <div class="container">
+            <!-- Brand and toggle get grouped for better mobile display -->
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle" data-toggle="collapse" data-target="#bs-example-navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <i class="fa fa-fw fa-gear"></i>
+                </button>
+                <a class="navbar-brand" href="{{ url_for('home') }}l">SteamCalc</a>
+            </div>
+            <!-- Collect the nav links, forms, and other content for toggling -->
+            <div class="collapse navbar-collapse" id="bs-example-navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="{{ url_for('home') }}">Options</a></li>
+                    <li><a href="#">Units</a></li>
+                    <li><a href="#">Help</a></li>
+                </ul>
+            </div><!-- /.navbar-collapse -->
+        </div><!-- /.container -->
+    </nav>
+
+    <div class="container body-content">
+
+        {% block content %}{% endblock %}
+
+        <hr/>
+        <footer>
+            <p>&copy; {{ year }} - SteamCalc</p>
+            <p> Developer: jbudu</p>
+        </footer>
+    </div>
+
+    <script src="/static/scripts/jquery-1.10.2.js"></script>
+    <script src="/static/scripts/bootstrap.js"></script>
+    <script src="/static/scripts/respond.js"></script>
+    {% block scripts %}{% endblock %}
+
+</body>
+</html>
